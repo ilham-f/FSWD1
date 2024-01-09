@@ -100,7 +100,7 @@
                             <label for="">No. Induk</label>
                             <div class="mb-3">
                                 <input class="form-control" type="text" name="no_induk"
-                                    value="{{ $karyawan->no_induk }}" readonly>
+                                    value="{{ $karyawan->no_induk }}">
                             </div>
                             <label for="">Nama</label>
                             <div class="mb-3">

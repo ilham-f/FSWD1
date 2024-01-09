@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+    {{-- @dd($first3karyawan) --}}
     <div class="page-heading">
         <h3>Statistik Karyawan</h3>
     </div>

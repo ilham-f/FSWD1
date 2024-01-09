@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Karyawan;
 use Illuminate\Http\Request;
+use App\Http\Resources\KaryawanResource;
 use App\Http\Requests\StoreKaryawanRequest;
 use App\Http\Requests\UpdateKaryawanRequest;
 
@@ -14,9 +15,11 @@ class KaryawanController extends Controller
      */
     public function index()
     {
+        $karyawans = new KaryawanResource(Karyawan::all());
+
         return view('karyawan',[
             "title" => "Tabel Karyawan",
-            "karyawans" => Karyawan::all()
+            "karyawans" => $karyawans
         ]);
     }
 
@@ -40,30 +43,6 @@ class KaryawanController extends Controller
         }
 
         return back()->with('failed', 'Data gagal ditambahkan!');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreKaryawanRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Karyawan $karyawan)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Karyawan $karyawan)
-    {
-        //
     }
 
     /**
@@ -101,6 +80,5 @@ class KaryawanController extends Controller
         }
 
         return back()->with('failed', 'Data gagal dihapus!');
-
     }
 }

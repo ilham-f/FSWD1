@@ -16,3 +16,4 @@ class Karyawan extends Model
         return $this->hasMany(Cuti::class);
     }
 }
+

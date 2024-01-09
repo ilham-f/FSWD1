@@ -16,3 +16,4 @@ class Cuti extends Model
         return $this->belongsTo(Karyawan::class, 'karyawan_id', 'id');
     }
 }
+
